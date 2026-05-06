@@ -313,7 +313,7 @@ export function HistorySection() {
             <div className="relative aspect-4/3">
               <Image
                 src="/images/thompson-house-1920s-rendition.png"
-                alt="Rendition of Thompson House as it may have looked during a 1920s garden party"
+                alt="Historical impression of Thompson House as it may have looked during a 1920s garden party"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 45vw, 100vw"
@@ -325,7 +325,7 @@ export function HistorySection() {
                 <Camera className="h-5 w-5 text-amber-800 mt-0.5 shrink-0" />
                 <div>
                   <h3 className="font-serif text-xl font-bold text-stone-950">
-                    Rendition: Thompson House in the 1920s
+                    Historical Impression: Thompson House in the 1920s
                   </h3>
                   <p className="text-sm text-stone-700 mt-1 leading-relaxed">
                     A sepia interpretation of how the house and gardens may have
