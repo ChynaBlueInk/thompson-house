@@ -42,7 +42,7 @@ const activities = [
 
 export function EventsSection() {
   return (
-    <section id="events" className="py-24 md:py-32 bg-secondary">
+    <section id="events" className="py-16 md:py-20 bg-secondary">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-4">
@@ -79,7 +79,7 @@ export function EventsSection() {
           </div>
 
           {/* Gallery image */}
-          <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
+          <div className="relative aspect-4/3 rounded-sm overflow-hidden">
             <Image
               src="/images/events.jpg"
               alt="An art exhibition event at Thompson House"
@@ -87,7 +87,7 @@ export function EventsSection() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-foreground/20" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-foreground/60 to-transparent">
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-foreground/60 to-transparent">
               <p className="text-heritage-cream font-serif text-lg font-semibold">
                 Gallery & Exhibition Space
               </p>

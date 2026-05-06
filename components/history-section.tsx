@@ -1,4 +1,6 @@
-import { ChevronDown, Home, MapPin } from "lucide-react"
+//components/history-section.tsx
+import Image from "next/image"
+import { ChevronDown, Home, MapPin, Camera, Landmark } from "lucide-react"
 
 interface TimelineEvent {
   year: string
@@ -10,6 +12,36 @@ interface TimelineEvent {
     title: string
     description: string
     scope: "Levin" | "NZ"
+  }
+}
+
+function getTimelineCardClasses(type: "house" | "levin" | "nz") {
+  if (type === "house") {
+    return {
+      card: "bg-emerald-50 border-emerald-200",
+      dot: "bg-emerald-700",
+      label: "text-emerald-800",
+      icon: "text-emerald-800",
+      year: "bg-emerald-800 text-white border-emerald-900",
+    }
+  }
+
+  if (type === "nz") {
+    return {
+      card: "bg-sky-50 border-sky-200",
+      dot: "bg-sky-700",
+      label: "text-sky-800",
+      icon: "text-sky-800",
+      year: "bg-sky-800 text-white border-sky-900",
+    }
+  }
+
+  return {
+    card: "bg-amber-50 border-amber-200",
+    dot: "bg-amber-700",
+    label: "text-amber-800",
+    icon: "text-amber-800",
+    year: "bg-amber-800 text-white border-amber-900",
   }
 }
 
@@ -218,43 +250,110 @@ export function HistorySection() {
   ]
 
   return (
-    <section id="history" className="py-24 md:py-32 bg-secondary">
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="history"
+      className="relative overflow-hidden py-16 md:py-20 bg-linear-to-b from-stone-100 via-amber-50/50 to-white"
+    >
+      <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-emerald-200/30 blur-3xl" />
+      <div className="absolute top-1/3 -left-24 h-72 w-72 rounded-full bg-amber-200/40 blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-4">
-          <div className="h-px flex-1 max-w-16 bg-accent" />
-          <span className="text-accent font-sans text-xs tracking-[0.3em] uppercase">
+          <div className="h-px flex-1 max-w-16 bg-amber-700" />
+          <span className="text-amber-800 font-sans text-xs tracking-[0.3em] uppercase">
             History
           </span>
         </div>
 
-        <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6 text-balance">
-          The Story of Thompson House
-        </h2>
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] items-start mb-12">
+          <div>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-stone-950 mb-6 text-balance">
+              The Story of Thompson House
+            </h2>
 
-        <p className="text-muted-foreground max-w-3xl mb-10 leading-relaxed text-pretty">
-          Thompson House began as a gracious family home and medical practice
-          before becoming one of Levin’s most treasured community arts and
-          cultural venues. Its story connects the Gow and Thompson families,
-          Levin’s growth as a service town, wartime hospitality, local arts, and
-          decades of volunteer care.
-        </p>
+            <p className="text-stone-700 max-w-3xl leading-relaxed text-pretty">
+              Thompson House began as a gracious family home and medical practice
+              before becoming one of Levin’s most treasured community arts and
+              cultural venues. Its story connects the Gow and Thompson families,
+              Levin’s growth as a service town, wartime hospitality, local arts,
+              and decades of volunteer care.
+            </p>
+
+            <div className="grid sm:grid-cols-3 gap-4 mt-8">
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+                <p className="text-3xl font-serif font-bold text-emerald-900">
+                  1921
+                </p>
+                <p className="text-sm text-emerald-900/80">
+                  House completed
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+                <p className="text-3xl font-serif font-bold text-amber-900">
+                  1974
+                </p>
+                <p className="text-sm text-amber-900/80">
+                  Cultural centre established
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-sky-200 bg-sky-50 p-4">
+                <p className="text-3xl font-serif font-bold text-sky-900">
+                  1985
+                </p>
+                <p className="text-sm text-sky-900/80">
+                  Historic place listing
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <figure className="rounded-4xl overflow-hidden border border-amber-200 bg-white shadow-xl">
+            <div className="relative aspect-4/3">
+              <Image
+                src="/images/thompson-house-1920s-rendition.png"
+                alt="Rendition of Thompson House as it may have looked during a 1920s garden party"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 45vw, 100vw"
+              />
+            </div>
+
+            <figcaption className="p-5 bg-linear-to-r from-amber-100 to-stone-100">
+              <div className="flex items-start gap-3">
+                <Camera className="h-5 w-5 text-amber-800 mt-0.5 shrink-0" />
+                <div>
+                  <h3 className="font-serif text-xl font-bold text-stone-950">
+                    Rendition: Thompson House in the 1920s
+                  </h3>
+                  <p className="text-sm text-stone-700 mt-1 leading-relaxed">
+                    A sepia interpretation of how the house and gardens may have
+                    looked during a 1920s gathering. This is not a historical
+                    photograph.
+                  </p>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
 
         <div className="space-y-5 mb-12">
-          <details className="group rounded-3xl border border-border bg-background/80 shadow-sm overflow-hidden">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 md:p-8">
+          <details className="group rounded-3xl border border-emerald-200 bg-white shadow-md overflow-hidden">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 md:p-8 bg-linear-to-r from-emerald-50 to-white">
               <div>
-                <p className="text-accent font-sans text-xs tracking-[0.3em] uppercase mb-2">
+                <p className="text-emerald-800 font-sans text-xs tracking-[0.3em] uppercase mb-2">
                   Family House
                 </p>
-                <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                <h3 className="font-serif text-2xl md:text-3xl font-bold text-stone-950">
                   From the Gow family home to the Thompson Memorial Cultural Centre
                 </h3>
               </div>
 
-              <ChevronDown className="h-6 w-6 shrink-0 text-accent transition-transform duration-300 group-open:rotate-180" />
+              <ChevronDown className="h-6 w-6 shrink-0 text-emerald-800 transition-transform duration-300 group-open:rotate-180" />
             </summary>
 
-            <div className="px-6 pb-8 md:px-8 text-muted-foreground leading-relaxed space-y-4">
+            <div className="px-6 pb-8 md:px-8 text-stone-700 leading-relaxed space-y-4">
               <p>
                 In 1919, Dr John Graham Gow OBE and his wife Dr Alice Marianne
                 “Maysie” Gow purchased land for a new house in Levin. The
@@ -308,103 +407,159 @@ export function HistorySection() {
 
           <details
             open
-            className="group rounded-3xl border border-border bg-background/80 shadow-sm overflow-hidden"
+            className="group rounded-3xl border border-amber-200 bg-white shadow-md overflow-hidden"
           >
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 md:p-8">
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 md:p-8 bg-linear-to-r from-amber-50 to-white">
               <div>
-                <p className="text-accent font-sans text-xs tracking-[0.3em] uppercase mb-2">
+                <p className="text-amber-800 font-sans text-xs tracking-[0.3em] uppercase mb-2">
                   Timeline
                 </p>
-                <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                <h3 className="font-serif text-2xl md:text-3xl font-bold text-stone-950">
                   Levin and Thompson House through time
                 </h3>
               </div>
 
-              <ChevronDown className="h-6 w-6 shrink-0 text-accent transition-transform duration-300 group-open:rotate-180" />
+              <ChevronDown className="h-6 w-6 shrink-0 text-amber-800 transition-transform duration-300 group-open:rotate-180" />
             </summary>
 
             <div className="px-6 pb-8 md:px-8">
-              <div className="flex flex-wrap gap-6 mb-12 text-sm">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-primary" />
-                  <Home className="w-4 h-4 text-primary" />
-                  <span className="text-foreground font-medium">
+              <div className="flex flex-wrap gap-3 mb-12 text-sm">
+                <div className="flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2">
+                  <div className="w-3 h-3 rounded-full bg-emerald-700" />
+                  <Home className="w-4 h-4 text-emerald-800" />
+                  <span className="text-emerald-950 font-medium">
                     Thompson House
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-accent" />
-                  <MapPin className="w-4 h-4 text-accent" />
-                  <span className="text-foreground font-medium">
-                    Levin & New Zealand
+                <div className="flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2">
+                  <div className="w-3 h-3 rounded-full bg-amber-700" />
+                  <MapPin className="w-4 h-4 text-amber-800" />
+                  <span className="text-amber-950 font-medium">
+                    Levin & Horowhenua
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2">
+                  <div className="w-3 h-3 rounded-full bg-sky-700" />
+                  <Landmark className="w-4 h-4 text-sky-800" />
+                  <span className="text-sky-950 font-medium">
+                    New Zealand
                   </span>
                 </div>
               </div>
 
               <div className="relative">
-                <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-border" />
+                <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-1 rounded-full bg-linear-to-b from-emerald-600 via-amber-600 to-sky-700" />
 
                 <div className="flex flex-col gap-8 md:gap-6">
-                  {timeline.map((item) => (
-                    <div key={item.year} className="relative">
-                      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 -top-1 z-20">
-                        <span className="bg-background/90 backdrop-blur-sm shadow-sm px-3 py-1 text-sm font-serif font-bold text-foreground border border-border rounded-full">
-                          {item.year}
-                        </span>
-                      </div>
+                  {timeline.map((item) => {
+                    const yearStyle = item.house
+                      ? getTimelineCardClasses("house")
+                      : item.context?.scope === "NZ"
+                        ? getTimelineCardClasses("nz")
+                        : getTimelineCardClasses("levin")
 
-                      <div className="flex flex-col md:flex-row pt-8 md:pt-6">
-                        <div className="md:w-1/2 md:pr-8 mb-4 md:mb-0">
-                          {item.house ? (
-                            <div className="ml-10 md:ml-0 md:text-right bg-background/70 rounded-2xl border border-border p-5 shadow-sm">
-                              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-primary border-2 border-background z-10 top-14 md:top-12" />
-                              <div className="flex items-center gap-2 md:justify-end mb-1">
-                                <Home className="w-4 h-4 text-primary md:order-2" />
-                                <span className="text-xs uppercase tracking-wider text-primary font-medium">
-                                  Thompson House
-                                </span>
-                              </div>
-                              <h4 className="font-serif text-lg font-semibold text-foreground">
-                                {item.house.title}
-                              </h4>
-                              <p className="text-muted-foreground mt-1 leading-relaxed text-sm">
-                                {item.house.description}
-                              </p>
-                            </div>
-                          ) : (
-                            <div className="hidden md:block" />
-                          )}
+                    return (
+                      <div key={item.year} className="relative">
+                        <div className="absolute left-4 md:left-1/2 -translate-x-1/2 -top-1 z-20">
+                          <span
+                            className={`shadow-sm px-3 py-1 text-sm font-serif font-bold border rounded-full ${yearStyle.year}`}
+                          >
+                            {item.year}
+                          </span>
                         </div>
 
-                        <div className="md:w-1/2 md:pl-8">
-                          {item.context ? (
-                            <div className="ml-10 md:ml-0 bg-background/70 rounded-2xl border border-border p-5 shadow-sm">
-                              {!item.house && (
-                                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-accent border-2 border-background z-10 top-14 md:top-12" />
-                              )}
-                              <div className="flex items-center gap-2 mb-1">
-                                <MapPin className="w-4 h-4 text-accent" />
-                                <span className="text-xs uppercase tracking-wider text-accent font-medium">
-                                  {item.context.scope === "Levin"
-                                    ? "Levin & Horowhenua"
-                                    : "New Zealand"}
-                                </span>
+                        <div className="flex flex-col md:flex-row pt-8 md:pt-6">
+                          <div className="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                            {item.house ? (
+                              <div
+                                className={`relative ml-10 md:ml-0 md:text-right rounded-2xl border p-5 shadow-sm ${getTimelineCardClasses("house").card}`}
+                              >
+                                <div
+                                  className={`absolute -left-10.75 md:left-auto md:-right-10.75 top-6 w-4 h-4 rounded-full border-4 border-white z-10 ${getTimelineCardClasses("house").dot}`}
+                                />
+                                <div className="flex items-center gap-2 md:justify-end mb-1">
+                                  <Home
+                                    className={`w-4 h-4 md:order-2 ${getTimelineCardClasses("house").icon}`}
+                                  />
+                                  <span
+                                    className={`text-xs uppercase tracking-wider font-semibold ${getTimelineCardClasses("house").label}`}
+                                  >
+                                    Thompson House
+                                  </span>
+                                </div>
+                                <h4 className="font-serif text-lg font-semibold text-stone-950">
+                                  {item.house.title}
+                                </h4>
+                                <p className="text-stone-700 mt-1 leading-relaxed text-sm">
+                                  {item.house.description}
+                                </p>
                               </div>
-                              <h4 className="font-serif text-lg font-semibold text-foreground">
-                                {item.context.title}
-                              </h4>
-                              <p className="text-muted-foreground mt-1 leading-relaxed text-sm">
-                                {item.context.description}
-                              </p>
-                            </div>
-                          ) : (
-                            <div className="hidden md:block" />
-                          )}
+                            ) : (
+                              <div className="hidden md:block" />
+                            )}
+                          </div>
+
+                          <div className="md:w-1/2 md:pl-8">
+                            {item.context ? (
+                              <div
+                                className={`relative ml-10 md:ml-0 rounded-2xl border p-5 shadow-sm ${
+                                  item.context.scope === "NZ"
+                                    ? getTimelineCardClasses("nz").card
+                                    : getTimelineCardClasses("levin").card
+                                }`}
+                              >
+                                {!item.house && (
+                                  <div
+                                    className={`absolute -left-10.75 md:left-auto md:-right-10.75 top-6 w-4 h-4 rounded-full border-4 border-white z-10 ${
+                                      item.context.scope === "NZ"
+                                        ? getTimelineCardClasses("nz").dot
+                                        : getTimelineCardClasses("levin").dot
+                                    }`}
+                                  />
+                                )}
+
+                                <div className="flex items-center gap-2 mb-1">
+                                  {item.context.scope === "NZ" ? (
+                                    <Landmark
+                                      className={`w-4 h-4 ${getTimelineCardClasses("nz").icon}`}
+                                    />
+                                  ) : (
+                                    <MapPin
+                                      className={`w-4 h-4 ${getTimelineCardClasses("levin").icon}`}
+                                    />
+                                  )}
+
+                                  <span
+                                    className={`text-xs uppercase tracking-wider font-semibold ${
+                                      item.context.scope === "NZ"
+                                        ? getTimelineCardClasses("nz").label
+                                        : getTimelineCardClasses("levin").label
+                                    }`}
+                                  >
+                                    {item.context.scope === "Levin"
+                                      ? "Levin & Horowhenua"
+                                      : "New Zealand"}
+                                  </span>
+                                </div>
+
+                                <h4 className="font-serif text-lg font-semibold text-stone-950">
+                                  {item.context.title}
+                                </h4>
+
+                                <p className="text-stone-700 mt-1 leading-relaxed text-sm">
+                                  {item.context.description}
+                                </p>
+                              </div>
+                            ) : (
+                              <div className="hidden md:block" />
+                            )}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             </div>

@@ -1,3 +1,4 @@
+//components/rooms-section.tsx
 import Image from "next/image"
 import { Users, Maximize, Coffee } from "lucide-react"
 
@@ -38,7 +39,7 @@ const rooms = [
 
 export function RoomsSection() {
   return (
-    <section id="rooms" className="py-24 md:py-32 bg-background">
+    <section id="rooms" className="py-16 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-4">
@@ -59,7 +60,7 @@ export function RoomsSection() {
         {/* Image + rooms grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
           {/* Featured image */}
-          <div className="lg:col-span-2 relative aspect-[3/4] rounded-sm overflow-hidden">
+          <div className="lg:col-span-2 relative aspect-3/4 rounded-sm overflow-hidden">
             <Image
               src="/images/meeting-room.jpg"
               alt="A meeting room inside Thompson House"

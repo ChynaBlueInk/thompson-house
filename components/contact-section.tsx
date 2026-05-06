@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-secondary">
+    <section id="contact" className="py-16 md:py-20 bg-secondary">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-4">
@@ -86,7 +86,7 @@ export function ContactSection() {
           </div>
 
           {/* Map embed */}
-          <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px] rounded-sm overflow-hidden bg-muted">
+          <div className="relative aspect-4/3 lg:aspect-auto lg:min-h-100 rounded-sm overflow-hidden bg-muted">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.5!2d175.2755!3d-40.6252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d40ac3d60c72f5b%3A0xb0bc3cd0e1f32d0!2s4+Kent+Street%2C+Levin+5510!5e0!3m2!1sen!2snz!4v1700000000000!5m2!1sen!2snz"
               width="100%"

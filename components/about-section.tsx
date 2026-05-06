@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 md:py-32 bg-background">
+    <section id="about" className="py-16 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-4">
@@ -17,7 +17,7 @@ export function AboutSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
-          <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
+          <div className="relative aspect-4/3 rounded-sm overflow-hidden">
             <Image
               src="/images/gardens.jpg"
               alt="Thompson House gardens and grounds, ideal for weddings and community events"

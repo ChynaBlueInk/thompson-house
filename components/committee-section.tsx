@@ -15,12 +15,11 @@ const generalMembers = [
   "Vicki Webster",
   "Shirley Welch",
   "Gary Tweddle",
-  "Anita Nalder",
 ]
 
 export function CommitteeSection() {
   return (
-    <section id="committee" className="py-24 md:py-32 bg-background">
+    <section id="committee" className="py-16 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-4">
@@ -43,7 +42,7 @@ export function CommitteeSection() {
           {/* Key roles */}
           <div>
             <h3 className="font-serif text-xl font-semibold text-foreground mb-6">
-              Management Committee 2025
+              Management Committee 2026
             </h3>
             <div className="flex flex-col gap-4">
               {committeeMembers.map((member) => (
