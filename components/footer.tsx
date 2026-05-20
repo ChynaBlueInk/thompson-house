@@ -14,7 +14,7 @@ export function Footer() {
               Thompson Memorial Cultural Centre Inc.
             </p>
             <p className="text-heritage-cream/50 text-sm mt-4 leading-relaxed">
-              A heritage 1920s community arts and cultural centre serving the
+              A heritage 1920s community arts, crafts and cultural centre serving the
               people of Levin and the Horowhenua since 1974.
             </p>
           </div>
@@ -30,7 +30,6 @@ export function Footer() {
                 { href: "/#history", label: "History" },
                 { href: "/#rooms", label: "Hire a Room" },
                 { href: "/#events", label: "Events" },
-                { href: "/friends", label: "Friends" },
                 { href: "/#contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
