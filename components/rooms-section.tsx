@@ -1,32 +1,28 @@
 //components/rooms-section.tsx
 import Image from "next/image"
-import { Users, Maximize, Coffee } from "lucide-react"
+import { Maximize, Coffee } from "lucide-react"
 
 const rooms = [
   {
     name: "Room 1",
-    capacity: "Up to 60 people",
     description:
       "Our largest ground-floor room, ideal for meetings, workshops, seminars, and community events.",
     features: ["Tables & chairs", "Natural lighting", "Flexible layout"],
   },
   {
     name: "Room 2",
-    capacity: "Up to 30 people",
     description:
       "A warm, mid-sized space perfect for smaller group meetings, craft sessions, and committee gatherings.",
     features: ["Comfortable seating", "Warm atmosphere", "Wall display space"],
   },
   {
     name: "Room 3",
-    capacity: "Up to 12 people",
     description:
       "An intimate space ideal for small meetings, one-on-one sessions, or private consultations.",
     features: ["Quiet setting", "Cosy atmosphere", "Private space"],
   },
   {
     name: "Upstairs Gallery",
-    capacity: "Up to 50 people",
     description:
       "A beautiful gallery space with excellent natural light, perfect for art exhibitions, photography displays, and special events.",
     features: [
@@ -53,7 +49,7 @@ export function RoomsSection() {
         </h2>
         <p className="text-muted-foreground max-w-2xl mb-16 leading-relaxed text-pretty">
           Thompson House offers four versatile spaces available at modest cost.
-          A fully equipped kitchen is available at no extra charge. The
+          A kitchen is available at no extra charge. The
           beautiful grounds are also popular for wedding photos.
         </p>
 
@@ -80,8 +76,6 @@ export function RoomsSection() {
                   {room.name}
                 </h3>
                 <div className="flex items-center gap-2 text-primary">
-                  <Users className="h-4 w-4" />
-                  <span className="text-sm font-sans">{room.capacity}</span>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed flex-1">
                   {room.description}
@@ -110,8 +104,7 @@ export function RoomsSection() {
             </h3>
             <p className="text-primary-foreground/80 mt-2 leading-relaxed">
               Contact our receptionist to check availability and make a
-              booking. Rooms are available at modest rates, with a fully
-              equipped kitchen included at no extra cost.
+              booking. Rooms are available at modest rates, with a kitchen included at no extra cost.
             </p>
           </div>
           <div className="flex flex-col gap-3">

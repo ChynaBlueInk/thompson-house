@@ -36,16 +36,16 @@ export function AboutSection() {
               activities &mdash; cultural, artistic, educational, and social.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              Thompson Memorial Cultural Centre Inc. was established in 1974
+              Thompson Memorial Cultural Centre Inc. was established in 197450
               through the joint initiatives of the Levin Borough Council and a
               steering committee of citizens from many societies and clubs. The
               Council presented Dr Jim Thompson&apos;s former home and surgery
-              to the people of Levin as a cultural and arts centre.
+              to the people of Levin as a cultural, crafts and arts centre.
             </p>
             <p className="text-foreground/80 leading-relaxed">
               Today, Thompson House provides the Horowhenua with a unique venue
               for the presentation of visual and performing arts and crafts,
-              hobby groups, and meetings. Over 50 groups meet regularly, and
+              hobby groups, and meetings. Many different groups meet regularly, and
               the house is open to all members of the community.
             </p>
 
@@ -59,14 +59,7 @@ export function AboutSection() {
                   Heritage Built
                 </p>
               </div>
-              <div>
-                <p className="font-serif text-3xl font-bold text-primary">
-                  50+
-                </p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Regular Groups
-                </p>
-              </div>
+          
               <div>
                 <p className="font-serif text-3xl font-bold text-primary">5</p>
                 <p className="text-sm text-muted-foreground mt-1">

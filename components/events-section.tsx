@@ -71,9 +71,7 @@ export function EventsSection() {
                 <h3 className="font-serif text-lg font-semibold text-foreground">
                   {activity.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {activity.description}
-                </p>
+              
               </div>
             ))}
           </div>
@@ -91,10 +89,7 @@ export function EventsSection() {
               <p className="text-heritage-cream font-serif text-lg font-semibold">
                 Gallery & Exhibition Space
               </p>
-              <p className="text-heritage-cream/80 text-sm mt-1">
-                Our upstairs gallery hosts regular exhibitions throughout the
-                year
-              </p>
+             
             </div>
           </div>
         </div>

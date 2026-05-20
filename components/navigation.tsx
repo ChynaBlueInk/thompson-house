@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/#history", label: "History" },
   { href: "/#rooms", label: "Hire a Room" },
   { href: "/#events", label: "Events" },
-  { href: "/friends", label: "Friends" },
   { href: "/#contact", label: "Contact" },
 ]
 

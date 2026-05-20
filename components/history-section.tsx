@@ -190,7 +190,7 @@ export function HistorySection() {
       house: {
         title: "Thompson Memorial Cultural Centre Established",
         description:
-          "Following Dr Thompson’s sudden death, the house is purchased by the Levin Borough Council and named Thompson Memorial Cultural Centre. It becomes a community arts and cultural venue.",
+          "Following Dr Thompson’s sudden death, the house is purchased by the Levin Borough Council and named Thompson Memorial Cultural Centre. It becomes a community arts, crafts and cultural venue.",
       },
       context: {
         title: "A Community Asset Takes Shape",
