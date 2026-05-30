@@ -1,6 +1,7 @@
 //components/history-section.tsx
 import Image from "next/image"
 import { ChevronDown, Home, MapPin, Camera, Landmark } from "lucide-react"
+import { StorybookHistorySection } from "./storybook-history-section"
 
 interface TimelineEvent {
   year: string
@@ -339,7 +340,7 @@ export function HistorySection() {
         </div>
 
         <div className="space-y-5 mb-12">
-          <details className="group rounded-3xl border border-emerald-200 bg-white shadow-md overflow-hidden">
+<details className="group rounded-3xl border border-emerald-200 bg-white shadow-md overflow-hidden">
   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 md:p-8 bg-linear-to-r from-emerald-50 to-white">
     <div>
       <p className="text-emerald-800 font-sans text-xs tracking-[0.3em] uppercase mb-2">
@@ -347,85 +348,17 @@ export function HistorySection() {
       </p>
 
       <h3 className="font-serif text-2xl md:text-3xl font-bold text-stone-950">
-        From the Gow family home to the Thompson Memorial Cultural Centre
+        From the Gow Family Home to the Thompson Memorial Cultural Centre
       </h3>
     </div>
 
     <ChevronDown className="h-6 w-6 shrink-0 text-emerald-800 transition-transform duration-300 group-open:rotate-180" />
   </summary>
 
-  <div className="px-6 pb-8 md:px-8 text-stone-700 leading-relaxed space-y-4">
-    <p>
-      Following World War I, Dr John Gow and his wife Dr Maysie Gow
-      settled in Levin and commissioned a new family home and medical
-      practice. The construction contract was signed on 9 February
-      1920, and the house was designed by architects Frederick de
-      Jersey Clere and Llewellyn Edwin Williams.
-    </p>
-
-    <p>
-      Built in 1921 by Mr J Harvey of Harvey & Co, the house was
-      designed in an English Cottage style, with steeply pitched
-      roofs, dormers, multiple gables, two chimneys, and a sheltered
-      gabled porch. The former stables stood to the south-east of the
-      house.
-    </p>
-
-    <p>
-      At a time when Levin had no public electricity supply, a Delco
-      generator housed near the stables provided power for the
-      property. The house also featured extensive timber construction,
-      large landscaped grounds, and gardens planted with native trees
-      collected by Dr Gow.
-    </p>
-
-    <p>
-      Dr Maysie Gow was a pioneering medical professional and is
-      believed to have been the first New Zealand woman to graduate
-      MRCS and LRCP in England after women were admitted to the
-      conjoint medical boards. Both Dr John and Dr Maysie Gow
-      practised medicine from the house in its early years.
-    </p>
-
-    <p>
-      Dr Samuel James “Jim” Thompson arrived in Levin in 1924 and
-      began practising with Dr Gow. In 1926, he purchased the house
-      and practice, making it both a family home and a place of
-      medical service for the Levin community.
-    </p>
-
-    <p>
-      During the Second World War, Thompson House became a well-known
-      centre of hospitality for RNZAF airmen stationed at Weraroa and
-      officers of the 2nd US Marine Division. Dr Thompson also served
-      as station medical officer for the RNZAF training wing at
-      Weraroa.
-    </p>
-
-    <p>
-      Ella Thompson was closely connected with music, painting and
-      theatre. She encouraged her husband’s involvement in the Levin
-      Operatic and Dramatic Society and was remembered for her
-      generosity and hospitality, particularly towards people involved
-      in the arts.
-    </p>
-
-    <p>
-      Thompson House sits beside the Levin War Memorial and the former
-      public gardens, placing it within one of the town’s most
-      historically significant civic areas.
-    </p>
-
-    <p>
-      After Dr Thompson’s death, the house was purchased by Levin
-      Borough Council in 1974 and named Thompson Memorial Cultural
-      Centre. Members of the Thompson family helped transform the home
-      into a community arts, crafts and cultural venue, with strong
-      support from local volunteers and community groups.
-    </p>
+  <div className="p-6 md:p-8">
+    <StorybookHistorySection />
   </div>
 </details>
-
           <details
             open
             className="group rounded-3xl border border-amber-200 bg-white shadow-md overflow-hidden"
